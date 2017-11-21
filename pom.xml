@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.iplay</groupId>
-	<artifactId>Fenkins</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>fenkins</artifactId>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>Fenkins</name>
+	<name>fenkins</name>
 	<description>Pull code from git and automatically deploy</description>
 
 	<parent>

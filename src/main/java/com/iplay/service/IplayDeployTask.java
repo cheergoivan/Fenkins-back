@@ -27,13 +27,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 
+import com.iplay.configuration.FenkinsConfigurationPropertites;
 import com.iplay.configuration.IplayDeployConfigurationProperties;
 import com.iplay.service.command.CommandService;
 import com.iplay.service.command.InputStreamToLinesConsumer;
 import com.iplay.service.git.GitService;
 
 @Service
-@EnableConfigurationProperties(IplayDeployConfigurationProperties.class)
+@EnableConfigurationProperties({ IplayDeployConfigurationProperties.class, FenkinsConfigurationPropertites.class })
 public class IplayDeployTask implements Runnable {
 	private static final Logger LOGGER = LoggerFactory.getLogger(IplayDeployTask.class);
 
@@ -53,6 +54,9 @@ public class IplayDeployTask implements Runnable {
 	@Value("${spring.mail.username}")
 	private String sender;
 
+	@Autowired
+	private FenkinsConfigurationPropertites fenkinsConfigurationPropertites;
+	
 	private IplayDeployConfigurationProperties iplayDeployConfigurationProperties;
 
 	@Autowired
@@ -62,6 +66,10 @@ public class IplayDeployTask implements Runnable {
 
 	@Override
 	public void run() {
+		
+		System.out.println(iplayDeployConfigurationProperties.getWorkspace());
+		System.out.println(fenkinsConfigurationPropertites.getProjects());
+		
 		Path logDir = Paths.get(iplayDeployConfigurationProperties.getWorkspace() + "/" + "log/"
 				+ iplayDeployConfigurationProperties.getProject());
 		Path log = logDir

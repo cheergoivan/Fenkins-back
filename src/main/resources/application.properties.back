@@ -5,8 +5,7 @@ server.port=8081
 #iplay.deploy.remote-repository=
 #iplay.deploy.credential.username=11;
 #iplay.deploy.credential.password=11;
-iplay.deploy.email-addresses=xiweipen@sina.com
-
+#iplay.deploy.email-addresses=xiweipen@sina.com
 
 #Mailer settings
 spring.mail.host=smtp.163.com

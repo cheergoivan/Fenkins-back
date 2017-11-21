@@ -1,5 +1,7 @@
 package com.iplay.entity;
 
+import java.util.Arrays;
+
 public class Project {
 	private String name;
 	private Git git = new Git();
@@ -47,6 +49,12 @@ public class Project {
 		this.emailNotification = emailNotification;
 	}
 
+	@Override
+	public String toString() {
+		return "Project [name=" + name + ", git=" + git + ", build=" + build + ", deployment=" + deployment
+				+ ", emailNotification=" + emailNotification + "]";
+	}
+
 	public static class Build {
 		private String command;
 		private long timeout = -1;
@@ -65,6 +73,11 @@ public class Project {
 
 		public void setTimeout(long timeout) {
 			this.timeout = timeout;
+		}
+
+		@Override
+		public String toString() {
+			return "Build [command=" + command + ", timeout=" + timeout + "]";
 		}
 	}
 
@@ -86,6 +99,11 @@ public class Project {
 
 		public void setTimeout(long timeout) {
 			this.timeout = timeout;
+		}
+
+		@Override
+		public String toString() {
+			return "Deployment [command=" + command + ", timeout=" + timeout + "]";
 		}
 	}
 
@@ -111,6 +129,11 @@ public class Project {
 
 		public static enum Trigger {
 			ALWAYS, NEVER, ONLY_FAILURE
+		}
+
+		@Override
+		public String toString() {
+			return "EmailNotification [trigger=" + trigger + ", emailList=" + Arrays.toString(emailList) + "]";
 		}
 	}
 }
