@@ -4,18 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.iplay</groupId>
-	<artifactId>fenkins</artifactId>
+	<artifactId>Fenkins</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>fenkins</name>
+	<name>Fenkins</name>
 	<description>Pull code from git and automatically deploy</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.8.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -51,12 +51,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>
@@ -69,4 +69,7 @@
 	</build>
 
 
+	<modules>
+		<module>?</module>
+	</modules>
 </project>
